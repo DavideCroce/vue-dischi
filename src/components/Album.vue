@@ -18,16 +18,22 @@ props: ["title", "author", "year", "poster"],
 .album-card{
     background-color: #2e3a46;
     text-align: center;
-    width: 200px;
-    height: 350px;
-    padding: 20px;
+    width: 180px;
+    height: 325px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 15px;
     img{
         width: 150px;
+        margin-bottom: 20px;
     }
     h3{
         color: white;
         font-size: 20px;
         text-transform: uppercase;
+        padding-bottom: 20px;
     }
     p{
         color: rgb(117, 117, 117);

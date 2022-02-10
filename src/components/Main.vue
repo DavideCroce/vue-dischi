@@ -1,7 +1,7 @@
 <template>
   <div class="main">
-      <div class="cards-container"  v-for="card in cards" :key="card">
-          <Album 
+      <div class="cards-container" >
+          <Album v-for="card in cards" :key="card"
           :author="card.author"
           :title="card.title"
           :year="card.year"
@@ -40,10 +40,10 @@ mounted(){
     width: 100%;
     padding-top: 100px;
     .cards-container{
-        height: 600px;
-        width: 50%;
+        width: 1000px;
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
     }
 }
 </style>
