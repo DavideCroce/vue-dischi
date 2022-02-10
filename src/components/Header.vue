@@ -13,9 +13,9 @@ name: 'Header',
 <style scoped lang="scss">
 .header{
     background-color: #2e3a46;
-    height: 100px;
+    height: 50px;
     img{
-        height: 100px;
+        height: 50px;
     }
 }
 </style>
