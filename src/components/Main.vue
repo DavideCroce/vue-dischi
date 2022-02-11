@@ -1,5 +1,10 @@
 <template>
   <div class="main">
+      <div class="search">
+          <select name="genre" id="" v-model="filtered" @onChange="fiteredMusic()">
+              <option v-for="card in cards" :key="card.genre" value="gen.genre">{{card.genre}}</option>
+          </select>
+      </div>
       <div class="cards-container" >
           <Album v-for="card in cards" :key="card"
           :author="card.author"
@@ -22,7 +27,22 @@ components:{
 data() {
     return{
         cards:[],
+        genres:[],
+        filtered: '',
     }
+    
+},
+methods: {
+    noRepeat(index){
+        this.cards[index] = card;
+        genres.push(card.genre);
+    },
+    filteredMusic(){
+        const filtered = this.filtered.toLowerCase();
+         this.cards = this.cards.filter((card) => 
+           card.genre.toLowerCase().includes(filtered)
+        );  
+    },
 },
 mounted(){
     axios.get("https://flynn.boolean.careers/exercises/api/array/music").then((res) => {
@@ -36,7 +56,7 @@ mounted(){
 <style scoped lang="scss">
 .main{
     background-color: #1e2d3b;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     padding-top: 100px;
     .cards-container{
